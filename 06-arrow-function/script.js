@@ -29,7 +29,7 @@
 // const tampilNama = () => `Hello World!`;
 // console.log(tampilNama());
 
-let mahasiswa = ['Chaerul', 'Marwan', 'Sayedeh'];
+let mahasiswa = ["Chaerul", "Marwan", "Sayedeh"];
 
 // Function Expression
 // let jumlahHuruf = mahasiswa.map(function(nama) {
@@ -42,10 +42,10 @@ let mahasiswa = ['Chaerul', 'Marwan', 'Sayedeh'];
 // console.log(jumlahHuruf);
 
 // Mengembalikan dalam bentuk Object bukan Array lagi
-let jumlahHuruf = mahasiswa.map(nama => ({
-	nama,
-	// nama ditulis seperti itu karena property dan nilai(value)-nya sama, jadi nama di atas sama dengan nama: nama
-	jmlHuruf: nama.length
+let jumlahHuruf = mahasiswa.map((nama) => ({
+  nama,
+  // nama ditulis seperti itu karena property dan nilai(value)-nya sama, jadi nama di atas sama dengan nama: nama
+  jmlHuruf: nama.length,
 }));
 // console.log(jumlahHuruf);
-console.table(jumlahHuruf);
+console.log(jumlahHuruf);

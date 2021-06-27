@@ -24,12 +24,12 @@
 // selamatMalam('Marwan');
 // console.dir(selamatMalam('Sayedeh'));
 
-// private method
-let add = (function() {
-	let counter = 0;
-	return function() {
-		return ++counter;
-	}
+// Private method
+let add = (function () {
+  let counter = 0;
+  return function () {
+    return ++counter;
+  };
 })();
 
 counter = 100;

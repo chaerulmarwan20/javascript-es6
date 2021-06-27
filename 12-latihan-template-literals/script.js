@@ -12,18 +12,19 @@
 // </div>`;
 
 // 2. Looping
-// const mhs = [{
-// 		nama: 'Chaerul',
-// 		email: 'chaerul@gmail.com'
-// 	},
-// 	{
-// 		nama: 'Marwan',
-// 		email: 'marwan@gmail.com'
-// 	},
-// 	{
-// 		nama: 'Sayedeh',
-// 		email: 'sayedeh@gmail.com'
-// 	}
+// const mhs = [
+//   {
+//     nama: "Chaerul",
+//     email: "chaerul@gmail.com",
+//   },
+//   {
+//     nama: "Marwan",
+//     email: "marwan@gmail.com",
+//   },
+//   {
+//     nama: "Sayedeh",
+//     email: "sayedeh@gmail.com",
+//   },
 // ];
 
 // const el = `<div class="mhs">
@@ -51,20 +52,20 @@
 // 4. Nested
 // HTML Fragments bersarang
 const mhs = {
-	nama: 'Chaerul Marwan',
-	semester: 5,
-	mataKuliah: [
-		'Rekayasa Web',
-		'Analisis dan Perancangan Sistem Informasi',
-		'Pemrograman Sistem Interaktif',
-		'Perancangan Sistem Berorientasi Object'
-	]
+  nama: "Chaerul Marwan",
+  semester: 5,
+  mataKuliah: [
+    "Rekayasa Web",
+    "Analisis dan Perancangan Sistem Informasi",
+    "Pemrograman Sistem Interaktif",
+    "Perancangan Sistem Berorientasi Object",
+  ],
 };
 
 function cetakMataKuliah(mataKuliah) {
-	return `
+  return `
 		<ol>
-			${mataKuliah.map(mk => `<li>${mk}</li>`).join('')}
+			${mataKuliah.map((mk) => `<li>${mk}</li>`).join("")}
 		</ol>
 	`;
 }

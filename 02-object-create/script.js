@@ -69,27 +69,28 @@
 
 // 4. Object.create()
 const methodMahasiswa = {
-	makan: function(porsi) {
-		this.energi += porsi;
-		console.log(`Halo ${this.nama}, selamat makan!`);
-	},
-	main: function(jam) {
-		this.energi -= jam;
-		console.log(`Halo ${this.nama}, selamat bermain!`);
-	},
-	tidur: function(jam) {
-		this.energi += jam * 2;
-		console.log(`Halo ${this.nama}, selamat tidur!`);
-	}
+  umur: 21,
+  makan: function (porsi) {
+    this.energi += porsi;
+    console.log(`Halo ${this.nama}, selamat makan!`);
+  },
+  main: function (jam) {
+    this.energi -= jam;
+    console.log(`Halo ${this.nama}, selamat bermain!`);
+  },
+  tidur: function (jam) {
+    this.energi += jam * 2;
+    console.log(`Halo ${this.nama}, selamat tidur!`);
+  },
 };
 
 function Mahasiswa(nama, energi) {
-	let mahasiswa = Object.create(methodMahasiswa);
-	mahasiswa.nama = nama;
-	mahasiswa.energi = energi;
+  let mahasiswa = Object.create(methodMahasiswa);
+  mahasiswa.nama = nama;
+  mahasiswa.energi = energi;
 
-	return mahasiswa;
+  return mahasiswa;
 }
 
-let chaerul = Mahasiswa('Chaerul', 10);
-let marwan = Mahasiswa('Marwan', 20);
+let chaerul = Mahasiswa("Chaerul", 10);
+let marwan = Mahasiswa("Marwan", 20);

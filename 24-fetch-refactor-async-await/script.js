@@ -27,49 +27,49 @@
 // 		});
 // });
 
-const searchButton = document.querySelector('.search-button');
-searchButton.addEventListener('click', async function() {
-	const inputKeyword = document.querySelector('.input-keyword');
-	const movies = await getMovies(inputKeyword.value);
-	updateUI(movies);
+const searchButton = document.querySelector(".search-button");
+searchButton.addEventListener("click", async function () {
+  const inputKeyword = document.querySelector(".input-keyword");
+  const movies = await getMovies(inputKeyword.value);
+  updateUI(movies);
 });
 
 function getMovies(keyword) {
-	return fetch('http://www.omdbapi.com/?apikey=fe78dae0&s=' + keyword)
-		.then(response => response.json())
-		.then(response => response.Search);
+  return fetch("http://www.omdbapi.com/?apikey=fe78dae0&s=" + keyword)
+    .then((response) => response.json())
+    .then((response) => response.Search);
 }
 
 function updateUI(movies) {
-	let cards = '';
-	movies.forEach(m => cards += showCards(m));
-	const movieContainer = document.querySelector('.movie-container');
-	movieContainer.innerHTML = cards;
+  let cards = "";
+  movies.forEach((m) => (cards += showCards(m)));
+  const movieContainer = document.querySelector(".movie-container");
+  movieContainer.innerHTML = cards;
 }
 
 // event binding
-document.addEventListener('click', async function(e) {
-	if (e.target.classList.contains('modal-detail-button')) {
-		const imdbid = e.target.dataset.imdbid;
-		const movieDetail = await getMovieDetail(imdbid);
-		updateUIDetail(movieDetail);
-	}
+document.addEventListener("click", async function (e) {
+  if (e.target.classList.contains("modal-detail-button")) {
+    const imdbid = e.target.dataset.imdbid;
+    const movieDetail = await getMovieDetail(imdbid);
+    updateUIDetail(movieDetail);
+  }
 });
 
 function getMovieDetail(imdbid) {
-	return fetch('http://www.omdbapi.com/?apikey=fe78dae0&i=' + imdbid)
-		.then(response => response.json())
-		.then(m => m);
+  return fetch("http://www.omdbapi.com/?apikey=fe78dae0&i=" + imdbid)
+    .then((response) => response.json())
+    .then((m) => m);
 }
 
 function updateUIDetail(m) {
-	const movieDetail = showMovieDetail(m);
-	const modalBody = document.querySelector('.modal-body');
-	modalBody.innerHTML = movieDetail;
+  const movieDetail = showMovieDetail(m);
+  const modalBody = document.querySelector(".modal-body");
+  modalBody.innerHTML = movieDetail;
 }
 
 function showCards(m) {
-	return /*html*/ `<div class="col-md-4 my-3">
+  return /*html*/ `<div class="col-md-4 my-3">
                       <div class="card">
                         <img src="${m.Poster}" class="card-img-top">
                         <div class="card-body">
@@ -82,7 +82,7 @@ function showCards(m) {
 }
 
 function showMovieDetail(m) {
-	return /*html*/ `<div class="container-fluid">
+  return /*html*/ `<div class="container-fluid">
                       <div class="row">
                         <div class="col-md-3">
                           <img src="${m.Poster}" class="img-fluid">

@@ -1,21 +1,22 @@
 // ambil semua elemen video
-const videos = Array.from(document.querySelectorAll('[data-duration]'));
+const videos = Array.from(document.querySelectorAll("[data-duration]"));
 
 // pilih hanya yang 'JAVASCRIPT LANJUTAN'
-let jsLanjut = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN'))
+let jsLanjut = videos
+  .filter((video) => video.textContent.includes("JAVASCRIPT LANJUTAN"))
 
-	// ambil durasi masing2 video
-	.map(item => item.dataset.duration)
+  // ambil durasi masing2 video
+  .map((item) => item.dataset.duration)
 
-	// ubah durasi menjadi float, ubah menit menjadi detik
-	.map(waktu => {
-		// 10:30 -> [10, 30] split
-		const parts = waktu.split(':').map(part => parseFloat(part));
-		return (parts[0] * 60) + parts[1];
-	})
+  // ubah durasi menjadi float, ubah menit menjadi detik
+  .map((waktu) => {
+    // 10:30 -> [10, 30] split
+    const parts = waktu.split(":").map((part) => parseFloat(part));
+    return parts[0] * 60 + parts[1];
+  })
 
-	// jumlahkan semua detik
-	.reduce((total, detik) => total + detik);
+  // jumlahkan semua detik
+  .reduce((total, detik) => total + detik);
 
 // ubah formatnya jadi jam menit detik
 const jam = Math.floor(jsLanjut / 3600); // 7200 = 2 jam
@@ -24,9 +25,11 @@ const menit = Math.floor(jsLanjut / 60); // 1080 = 18 menit, sisanya 12
 const detik = jsLanjut - menit * 60; // 12 detik
 
 // simpan di DOM
-const pDurasi = document.querySelector('.total-durasi');
+const pDurasi = document.querySelector(".total-durasi");
 pDurasi.textContent = `${jam} Jam, ${menit} Menit, ${detik} Detik.`;
 
-const jmlVideo = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN')).length;
-const pJmlVideo = document.querySelector('.jumlah-video');
+const jmlVideo = videos.filter((video) =>
+  video.textContent.includes("JAVASCRIPT LANJUTAN")
+).length;
+const pJmlVideo = document.querySelector(".jumlah-video");
 pJmlVideo.textContent = `${jmlVideo} Video.`;

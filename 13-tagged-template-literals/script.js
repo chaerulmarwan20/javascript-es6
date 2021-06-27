@@ -17,13 +17,17 @@
 // console.log(str);
 
 // Highlight
-const nama = 'Chaerul Marwan';
+const nama = "Chaerul Marwan";
 const umur = 20;
-const email = 'chaerulmarwan20@gmail.com';
+const email = "chaerulmarwan20@gmail.com";
 
 function higlight(strings, ...values) {
-	return strings.reduce((result, str, i) => `${result}${str}<span class="hl">${values[i] || ''}</span>`, '');
+  return strings.reduce(
+    (result, str, i) =>
+      `${result}${str}<span class="hl">${values[i] || ""}</span>`,
+    ""
+  );
 }
 
-const str = higlight `Halo, nama saya ${nama}, saya ${umur} tahun, dan email saya adalah ${email}.`;
+const str = higlight`Halo, nama saya ${nama}, saya ${umur} tahun, dan email saya adalah ${email}.`;
 document.body.innerHTML = str;

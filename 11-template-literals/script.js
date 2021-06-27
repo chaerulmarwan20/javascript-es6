@@ -11,10 +11,10 @@
 
 // HTML Fragments
 const mhs = {
-	nama: 'Chaerul Marwan',
-	umur: 20,
-	nrp: '0000067671',
-	email: 'chaerulmarwan20@gmail.com'
+  nama: "Chaerul Marwan",
+  umur: 20,
+  nrp: "0000067671",
+  email: "chaerulmarwan20@gmail.com",
 };
 
 const el = `<div class="mhs">

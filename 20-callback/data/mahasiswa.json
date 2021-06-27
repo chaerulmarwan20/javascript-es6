@@ -1,22 +1,23 @@
-[{
-		"nama": "Chaerul",
-		"nrp": "0000067671",
-		"email": "chaerul@gmail.com",
-		"jurusan": "Teknik Informatika",
-		"idDosenWali": 1
-	},
-	{
-		"nama": "Marwan",
-		"nrp": "0000067672",
-		"email": "marwan@gmail.com",
-		"jurusan": "Teknik Informatika",
-		"idDosenWali": 2
-	},
-	{
-		"nama": "Sayedeh",
-		"nrp": "0000067673",
-		"email": "sayedeh@gmail.com",
-		"jurusan": "Sistem Informasi",
-		"idDosenWali": 2
-	}
+[
+  {
+    "nama": "Chaerul",
+    "nrp": "0000067671",
+    "email": "chaerul@gmail.com",
+    "jurusan": "Teknik Informatika",
+    "idDosenWali": 1
+  },
+  {
+    "nama": "Marwan",
+    "nrp": "0000067672",
+    "email": "marwan@gmail.com",
+    "jurusan": "Teknik Informatika",
+    "idDosenWali": 2
+  },
+  {
+    "nama": "Sayedeh",
+    "nrp": "0000067673",
+    "email": "sayedeh@gmail.com",
+    "jurusan": "Sistem Informasi",
+    "idDosenWali": 2
+  }
 ]

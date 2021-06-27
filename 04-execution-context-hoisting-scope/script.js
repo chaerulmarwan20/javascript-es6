@@ -36,32 +36,32 @@
 // console.log(cetakURL('@mrsayedeh', '@arull.jpg'));
 
 // function a() {
-// 	console.log('ini a');
+//   console.log("ini a");
 
-// 	function b() {
-// 		console.log('ini b');
+//   function b() {
+//     console.log("ini b");
 
-// 		function c() {
-// 			console.log('ini c');
-// 		}
-// 		c();
-// 	}
-// 	b();
+//     function c() {
+//       console.log("ini c");
+//     }
+//     c();
+//   }
+//   b();
 // }
 
 // a();
 
 function satu() {
-	var nama = 'Chaerul';
-	console.log(nama);
+  var nama = "Chaerul";
+  console.log(nama);
 }
 
 function dua() {
-	console.log(nama);
+  console.log(nama);
 }
 
 console.log(nama);
-var nama = 'Marwan';
+var nama = "Marwan";
 satu();
-dua('Sayedeh');
+dua("Sayedeh");
 console.log(nama);

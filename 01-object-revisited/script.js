@@ -42,18 +42,18 @@
 // 3. Constructor Function
 // keyword new
 function Mahasiswa(nama, energi) {
-	this.nama = nama;
-	this.energi = energi;
+  this.nama = nama;
+  this.energi = energi;
 
-	this.makan = function(porsi) {
-		this.energi += porsi;
-		console.log(`Halo ${this.nama}, selamat makan!`);
-	}
+  this.makan = function (porsi) {
+    this.energi += porsi;
+    console.log(`Halo ${this.nama}, selamat makan!`);
+  };
 
-	this.main = function(jam) {
-		this.energi -= jam;
-		console.log(`Halo ${this.nama}, selamat bermain!`);
-	}
+  this.main = function (jam) {
+    this.energi -= jam;
+    console.log(`Halo ${this.nama}, selamat bermain!`);
+  };
 }
 
-let chaerul = new Mahasiswa('Chaerul', 10);
+let chaerul = new Mahasiswa("Chaerul", 10);

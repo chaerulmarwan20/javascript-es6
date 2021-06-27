@@ -1,36 +1,39 @@
-$('.search-button').on('click', function() {
-	$.ajax({
-		url: 'http://www.omdbapi.com/?apikey=fe78dae0&s=' + $('.input-keyword').val(),
-		success: results => {
-			const movies = results.Search;
-			let cards = '';
-			movies.forEach(m => {
-				cards += showCards(m);
-			});
-			$('.movie-container').html(cards);
+$(".search-button").on("click", function () {
+  $.ajax({
+    url:
+      "http://www.omdbapi.com/?apikey=fe78dae0&s=" + $(".input-keyword").val(),
+    success: (results) => {
+      const movies = results.Search;
+      let cards = "";
+      movies.forEach((m) => {
+        cards += showCards(m);
+      });
+      $(".movie-container").html(cards);
 
-			// ketika tombol detail di-klik
-			$('.modal-detail-button').on('click', function() {
-				$.ajax({
-					url: 'http://www.omdbapi.com/?apikey=fe78dae0&i=' + $(this).data('imdbid'),
-					success: m => {
-						const movieDetail = showMovieDetail(m);
-						$('.modal-body').html(movieDetail);
-					},
-					error: (e) => {
-						console.log(e.responseText);
-					}
-				});
-			});
-		},
-		error: (e) => {
-			console.log(e.responseText);
-		}
-	});
+      // Ketika tombol detail di-klik
+      $(".modal-detail-button").on("click", function () {
+        $.ajax({
+          url:
+            "http://www.omdbapi.com/?apikey=fe78dae0&i=" +
+            $(this).data("imdbid"),
+          success: (m) => {
+            const movieDetail = showMovieDetail(m);
+            $(".modal-body").html(movieDetail);
+          },
+          error: (e) => {
+            console.log(e.responseText);
+          },
+        });
+      });
+    },
+    error: (e) => {
+      console.log(e.responseText);
+    },
+  });
 });
 
 function showCards(m) {
-	return /*html*/ `<div class="col-md-4 my-3">
+  return /*html*/ `<div class="col-md-4 my-3">
                       <div class="card">
                         <img src="${m.Poster}" class="card-img-top">
                         <div class="card-body">
@@ -43,7 +46,7 @@ function showCards(m) {
 }
 
 function showMovieDetail(m) {
-	return /*html*/ `<div class="container-fluid">
+  return /*html*/ `<div class="container-fluid">
                       <div class="row">
                         <div class="col-md-3">
                           <img src="${m.Poster}" class="img-fluid">
